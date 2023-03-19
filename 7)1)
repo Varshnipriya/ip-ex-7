@@ -1,0 +1,38 @@
+ import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+@WebServlet(urlPatterns = {"/NewServlet3"})
+public class NewServlet3 extends HttpServlet {
+
+         @Override
+     public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+      out.println("<html>");
+      out.println("<head>");
+      out.println("<title>Random Quote Generator</title>");
+      out.println("</head>");
+      out.println("<body>");
+      out.println("<h1>Random Quote Generator</h1>");
+      out.println("<p>Your random quote is:</p>");
+
+    
+      String[] quotes = {
+         "Be yourself; everyone else is already taken. - Oscar Wilde",
+         "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein",
+         "So many books, so little time. - Frank Zappa",
+         "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind. - Bernard M. Baruch",
+         "You only live once, but if you do it right, once is enough. - Mae West"
+      };
+
+          out.println("<p>" + quotes[index] + "</p>");
+      out.println("</body>");
+      out.println("</html>");
+   }
+}
